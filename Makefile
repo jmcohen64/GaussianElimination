@@ -2,7 +2,6 @@ CFLAGS=-std=c99
 CFLAGS+=-fsignaling-nans
 CFLAGS+=-g -ggdb3
 CFLAGS+= -O5
-CFLAGS+= /usr/include/python3.12 # Only to make a Python extension
 LDFLAGS=-lm
 
 
@@ -16,8 +15,8 @@ gauss_solve : $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $@ $(LDFLAGS)
 
 
-foo.so: foo.c foo.h
-	gcc -shared -o libfoo.so -fPIC foo.c
+bar.so: bar.c
+	gcc -shared -I/usr/include/python3.12 -o libfoo.so -fPIC bar.c
 
 
 
