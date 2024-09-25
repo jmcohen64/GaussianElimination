@@ -25,5 +25,6 @@ check: gauss_solve
 
 clean: FORCE
 	@-rm gauss_solve *.o
+	@-rm bar.so
 
 FORCE:
