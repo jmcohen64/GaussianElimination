@@ -20,4 +20,7 @@ To install the extension you do:
 
 	python setup.py install
 
+Calling functions directly via cffi (C Foreign Function Interface).
+-------------------------------------------------------------------
+C functions are build directly into DLL (.dll) on Windows or Shared Objects.
 
