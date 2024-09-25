@@ -22,5 +22,10 @@ To install the extension you do:
 
 Calling functions directly via cffi (C Foreign Function Interface).
 -------------------------------------------------------------------
-C functions are build directly into DLL (.dll) on Windows or Shared Objects.
+C functions are build directly into a 
+* DLL (.dll) on Windows or 
+* Shared Objects (.so) files under Linux..
+
+The file bar_ext.py is an example of this approach. It calls functions in the
+library libbar.so (Linux).
 
