@@ -1,3 +1,6 @@
+/* -*- Maxima -*- */
+/* Code that validates LU decomposition and solution */
+
 U:matrix(
   [2,3,-1],
   [0,-5,4],
