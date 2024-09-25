@@ -14,7 +14,7 @@ gauss_solve : $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $@ $(LDFLAGS)
 
 
-run: gauss_solve
+check: gauss_solve
 	./$<
 
 clean: FORCE
