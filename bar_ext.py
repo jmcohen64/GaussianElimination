@@ -4,8 +4,8 @@ import ctypes
 lib = ctypes.CDLL('./libfoo.so')
 
 # Define the function signature
-lib.foo_add.argtypes = (ctypes.c_int, ctypes.c_int)
-lib.foo_add.restype = ctypes.c_int
+lib.bar_add.argtypes = (ctypes.c_int, ctypes.c_int)
+lib.bar_add.restype = ctypes.c_int
 
 # Call the function
 result = lib.foo_add(5, 7)
