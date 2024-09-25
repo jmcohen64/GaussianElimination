@@ -5,7 +5,7 @@ CFLAGS+= -O5
 LDFLAGS=-lm
 
 
-all: gauss_solve bar.so
+all: gauss_solve libbar.so
 
 OBJS = gauss_solve.o main.o helpers.o
 gauss_solve.o : gauss_solve.h
@@ -15,8 +15,8 @@ gauss_solve : $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $@ $(LDFLAGS)
 
 
-bar.so: bar.c
-	gcc -shared -I/usr/include/python3.12 -o libfoo.so -fPIC bar.c
+libbar.so: bar.c
+	gcc -shared -I/usr/include/python3.12 -o libbar.so -fPIC bar.c
 
 
 
