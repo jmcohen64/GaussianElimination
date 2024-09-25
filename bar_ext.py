@@ -1,7 +1,7 @@
 import ctypes
 
 # Load the shared library
-lib = ctypes.CDLL('./libfoo.so')
+lib = ctypes.CDLL('./libbar.so')
 
 # Define the function signature
 lib.bar_add.argtypes = (ctypes.c_int, ctypes.c_int)
