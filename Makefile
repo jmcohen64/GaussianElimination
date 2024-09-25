@@ -19,7 +19,6 @@ libbar.so: bar.c
 	gcc -shared -I/usr/include/python3.12 -o libbar.so -fPIC bar.c
 
 
-
 check: gauss_solve
 	./$<
 
