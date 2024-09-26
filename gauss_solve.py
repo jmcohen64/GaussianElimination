@@ -3,11 +3,6 @@ import ctypes
 # Load the shared library
 lib = ctypes.CDLL('./libgauss.so')
 
-A = [[2.0, 3.0, -1.0],
-     [4.0, 1.0, 2.0],
-     [-2.0, 7.0, 2.0]];
-
-
 
 def lu_in_place(A):
     # Create a 2D array in Python and flatten it
@@ -29,5 +24,10 @@ def lu_in_place(A):
         for i in range(n)
     ]
     return modified_array_2d
+
+
+A = [[2.0, 3.0, -1.0],
+     [4.0, 1.0, 2.0],
+     [-2.0, 7.0, 2.0]];
 
 print(lu_in_place(A))
