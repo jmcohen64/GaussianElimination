@@ -18,7 +18,7 @@ def lu(A):
     # Modify the array in C (e.g., add 10 to each element)
     lib.lu_in_place(n, c_array_2d)
 
-    # Convert back to a 2D Python list
+    # Convert back to a 2D Python list of lists
     modified_array_2d = [
         [c_array_2d[i * n + j] for j in range(n)]
         for i in range(n)
