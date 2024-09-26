@@ -5,27 +5,4 @@ Basic algorithms are implemented in C
 * LU - decomposition "in place" where L and U are placed directly in A
 * A number of useful helper functions (norms, distances, creation and destruction of matrices, random matrix generation)
 
-Building a Python Extension
-==================================
-In this folder you also have examples of turning C code into Python commands.
-Two ways are covered:
-
-Building a Python Package
-------------------------
-The consequential file is setyp.py. To build the extension you run:
-
-	python setup.py build
-	
-To install the extension you do:
-
-	python setup.py install
-
-Calling functions directly via cffi (C Foreign Function Interface).
--------------------------------------------------------------------
-C functions are build directly into a 
-* DLL (.dll) on Windows or 
-* Shared Objects (.so) files under Linux..
-
-The file bar_ext.py is an example of this approach. It calls functions in the
-library libbar.so (Linux).
 
