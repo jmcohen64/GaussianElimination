@@ -18,7 +18,7 @@ flat_array_2d = [item for row in A for item in row]
 c_array_2d = (ctypes.c_int * len(flat_array_2d))(*flat_array_2d)
 
 # Define the function signature
-lib.lu_in_place.argtypes = (ctypes.c_int, ctypes.POINTER(ctypes.c_int))
+lib.lu_in_place.argtypes = (ctypes.c_int, ctypes.POINTER(ctypes.POINTER(ctypes.c_double)))
 
 # Modify the array in C (e.g., add 10 to each element)
 lib.lu_in_place(n, c_array_2d)
@@ -28,4 +28,5 @@ modified_array_2d = [
     [c_array_2d[i * n + j] for j in range(n)]
     for i in range(n)
 ]
-    
+
+print(modified_array_2d)
