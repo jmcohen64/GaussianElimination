@@ -30,4 +30,4 @@ def lu_in_place(A):
     ]
     return modified_array_2d
 
-print(modified_array_2d)
+print(lu_in_place(A))
