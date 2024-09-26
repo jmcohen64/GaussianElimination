@@ -1,14 +1,13 @@
 import ctypes
-import numpy as np
 
 # Load the shared library
 lib = ctypes.CDLL('./libgauss.so')
 
-A = np.array([
-    [2, 3, -1],
-    [4, 1, 2],
-    [-2, 7, 2]
-],dtype = np.float64);
+A = [[2.0, 3.0, -1.0],
+     [4.0, 1.0, 2.0],
+     [-2.0, 7.0, 2.0]];
+
+
 
 # def lu_in_place(A):
 # Create a 2D array in Python and flatten it
