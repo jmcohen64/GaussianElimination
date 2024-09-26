@@ -3,7 +3,7 @@ CFLAGS+=-fsignaling-nans
 CFLAGS+=-g -ggdb3
 CFLAGS+= -O5
 LDFLAGS=-lm
-
+PYTHON=python
 
 all: gauss_solve libgauss.so
 
@@ -20,7 +20,7 @@ check_gauss_solve: gauss_solve
 	./$<
 
 check_ctype_wrapper: gauss_solve.py libgauss.so
-	./$<
+	$(PYTHON) ./$<
 
 
 
