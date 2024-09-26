@@ -37,6 +37,8 @@ def lu(A):
         [c_array_2d[i * n + j] for j in range(n)]
         for i in range(n)
     ]
+
+    # Extract L and U parts from A
     L = [
         [[modified_array_2d[i][j] for j in range(i)] + [1] + [0 for j in range(i+1,n)]]
         for i in range(n)
