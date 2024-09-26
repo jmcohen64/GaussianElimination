@@ -23,7 +23,11 @@ def lu_in_place(A):
         [c_array_2d[i * n + j] for j in range(n)]
         for i in range(n)
     ]
-    return modified_array_2d
+    L = [
+        [modified_array_2d[i][j] for j in range(i)]
+        for i in range(n)
+    ]
+    return L
 
 
 A = [[2.0, 3.0, -1.0],
