@@ -7,7 +7,7 @@ A = [
     [2, 3, -1],
     [4, 1, 2],
     [-2, 7, 2]
-};
+];
 
 # def lu_in_place(A):
 # Create a 2D array in Python and flatten it
@@ -21,7 +21,7 @@ c_array_2d = (ctypes.c_int * len(flat_array_2d))(*flat_array_2d)
 lib.lu_in_place.argtypes = (ctypes.POINTER(ctypes.c_int), ctypes.c_int, ctypes.c_int, ctypes.c_int)
 
 # Modify the array in C (e.g., add 10 to each element)
-lib.modify_2d_array(n, c_array_2d)
+lib.lu_in_place(n, c_array_2d)
 
 # Convert back to a 2D Python list
 modified_array_2d = [
