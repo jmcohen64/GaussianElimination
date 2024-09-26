@@ -14,11 +14,6 @@ helpers.o: helpers.h
 gauss_solve : $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $@ $(LDFLAGS)
 
-
-libbar.so: bar.c
-	gcc -shared -I/usr/include/python3.12 -o $@ -fPIC bar.c
-
-
 check: gauss_solve
 	./$<
 
