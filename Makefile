@@ -3,7 +3,7 @@ CFLAGS+=-fsignaling-nans
 CFLAGS+=-g -ggdb3
 CFLAGS+= -O5
 LDFLAGS=-lm
-PYTHON=python
+PYTHON=python			#Name of Python executable
 
 all: gauss_solve libgauss.so
 
