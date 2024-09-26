@@ -25,7 +25,7 @@ lib.lu_in_place(n, c_array_2d)
 
 # Convert back to a 2D Python list
 modified_array_2d = [
-    [c_array_2d[i * n + j] for j in range(cols)]
+    [c_array_2d[i * n + j] for j in range(n)]
     for i in range(n)
 ]
     
