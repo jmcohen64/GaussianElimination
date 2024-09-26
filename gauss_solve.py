@@ -45,4 +45,5 @@ if __name__ == "__main__":
          [-2.0, 7.0, 2.0]];
 
     L, U = lu(A)
-
+    print(L)
+    print(U)
