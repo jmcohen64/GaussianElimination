@@ -28,7 +28,7 @@ def lu_in_place(A):
         for i in range(n)
     ]
     U = [
-        [ for j in range(i) ] + [modified_array_2d[i][j] for j in range(i, n)]
+        [ for j in range(i) ] + [ modified_array_2d[i][j] for j in range(i, n)]
         for i in range(n)
     ]
 
