@@ -14,7 +14,12 @@ helpers.o: helpers.h
 gauss_solve : $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $@ $(LDFLAGS)
 
-check: gauss_solve
+check: check_gauss_solve check_ctype_wrapper
+
+check_gauss_solve: gauss_solve
+	./$<
+
+check_ctype_wrapper: gauss_solve.py
 	./$<
 
 
