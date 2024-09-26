@@ -5,6 +5,9 @@ lib = ctypes.CDLL('./libgauss.so')
 
 
 def lu(A):
+    """ Accepts a list of lists A of floats and
+    it returns (L, U) - the LU-decomposition as a tuple.
+    """
     # Create a 2D array in Python and flatten it
     n = len(A)
     flat_array_2d = [item for row in A for item in row]
