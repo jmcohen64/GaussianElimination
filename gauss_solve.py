@@ -43,6 +43,7 @@ def lu(A):
         [[modified_array_2d[i][j] for j in range(i)] + [1] + [0 for j in range(i+1,n)]]
         for i in range(n)
     ]
+
     U = [
         [ 0 for j in range(i) ] + [ modified_array_2d[i][j] for j in range(i, n) ]
         for i in range(n)
