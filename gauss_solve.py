@@ -4,7 +4,7 @@ import ctypes
 lib = ctypes.CDLL('./libgauss.so')
 
 
-def lu_in_place(A):
+def lu(A):
     # Create a 2D array in Python and flatten it
     n = len(A)
     flat_array_2d = [item for row in A for item in row]
@@ -28,7 +28,7 @@ def lu_in_place(A):
         for i in range(n)
     ]
     U = [
-        [ for j in range(i) ] + [ modified_array_2d[i][j] for j in range(i, n)]
+        [ 0 for j in range(i) ] + [ modified_array_2d[i][j] for j in range(i, n) ]
         for i in range(n)
     ]
 
@@ -39,4 +39,4 @@ A = [[2.0, 3.0, -1.0],
      [4.0, 1.0, 2.0],
      [-2.0, 7.0, 2.0]];
 
-print(lu_in_place(A))
+L, U = lu(A))
