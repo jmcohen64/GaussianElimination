@@ -17,6 +17,12 @@ gauss_solve : $(OBJS)
 check: gauss_solve
 	./$<
 
+
+
+LIB_SOURCES = gauss_solve.c
+libgauss.so: $(LIB_SOURCES)
+	gcc -shared -I/usr/include/python3.12 -o $@ -fPIC $(LIB_SOURCES)
+
 clean: FORCE
 	@-rm gauss_solve *.o
 	@-rm *.so
