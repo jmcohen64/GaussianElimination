@@ -19,7 +19,7 @@ check: check_gauss_solve check_ctype_wrapper
 check_gauss_solve: gauss_solve
 	./$<
 
-check_ctype_wrapper: gauss_solve.py
+check_ctype_wrapper: gauss_solve.py libgauss.so
 	./$<
 
 
