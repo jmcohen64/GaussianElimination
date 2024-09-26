@@ -5,7 +5,7 @@ CFLAGS+= -O5
 LDFLAGS=-lm
 
 
-all: gauss_solve libbar.so
+all: gauss_solve
 
 OBJS = gauss_solve.o main.o helpers.o
 gauss_solve.o : gauss_solve.h
