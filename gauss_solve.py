@@ -1,4 +1,12 @@
-# -*- Mode: Python -*-
+#----------------------------------------------------------------
+# File:     gauss_solve.py
+#----------------------------------------------------------------
+#
+# Author:   Marek Rychlik (rychlik@arizona.edu)
+# Date:     Thu Sep 26 10:38:32 2024
+# Copying:  (C) Marek Rychlik, 2020. All rights reserved.
+# 
+#----------------------------------------------------------------
 # A Python wrapper around the C library libgauss.so
 
 import ctypes
