@@ -33,9 +33,7 @@ def lu_c(A):
 
     # Create a 2D array in Python and flatten it
     n = len(A)
-    print(f'A: {A}')
     flat_array_2d = [item for row in A for item in row]
-    print(f'flat_array_2d: {flat_array_2d}')
 
     # Convert to a ctypes array
     c_array_2d = (ctypes.c_double * len(flat_array_2d))(*flat_array_2d)
