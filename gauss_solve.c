@@ -7,6 +7,7 @@
 * Copying:  (C) Marek Rychlik, 2020. All rights reserved.
 *
 *----------------------------------------------------------------*/
+#include "gauss_solve.h"
 
 void gauss_solve_in_place(const int n, double A[n][n], double b[n])
 {
