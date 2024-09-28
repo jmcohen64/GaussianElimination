@@ -11,9 +11,7 @@
 
 import ctypes
 
-# Load the shared library
-lib = ctypes.CDLL('./libgauss.so')
-
+gauss_library_path = './libgauss.so'
 
 def unpack(A):
     """ Extract L and U parts from A, fill with 0's and 1's """
@@ -26,10 +24,13 @@ def unpack(A):
 
     return L, U
 
-def lu(A):
+def lu_c(A):
     """ Accepts a list of lists A of floats and
     it returns (L, U) - the LU-decomposition as a tuple.
     """
+    # Load the shared library
+    lib = ctypes.CDLL(gauss_library_path)
+
     # Create a 2D array in Python and flatten it
     n = len(A)
     flat_array_2d = [item for row in A for item in row]
