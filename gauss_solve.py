@@ -77,3 +77,7 @@ if __name__ == "__main__":
     L, U = lu(A)
     print(L)
     print(U)
+
+    L, U = lu(A, use_c=True)
+    print(L)
+    print(U)
