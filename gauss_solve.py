@@ -63,10 +63,10 @@ def lu_python(A):
     for k in range(n):
         for i in range(n):
             for j in range(k):
-                A[k][i] -= A[k][j] * A[j][i]
+                A[k][i] = A[k][i] - A[k][j] * A[j][i]
         for i in range(k+1, n):
             for j in range(k):
-                A[i][k] -= A[i][j] * A[j][k]
+                A[i][k] = A[i][k] - A[i][j] * A[j][k]
         A[i][k] /= A[k][k]
 
     return unpack(A)
