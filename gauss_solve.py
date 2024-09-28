@@ -67,7 +67,7 @@ def lu_python(A):
         for i in range(k+1, n):
             for j in range(k):
                 A[i][k] -= A[i][j] * A[j][k]
-            A[i][k] /= A[k][k]
+        A[i][k] /= A[k][k]
 
     return unpack(A)
 
@@ -82,19 +82,19 @@ def lu(A, use_c=False):
 
 if __name__ == "__main__":
 
-    # A = [[2.0, 3.0, -1.0],
-    #      [4.0, 1.0, 2.0],
-    #      [-2.0, 7.0, 2.0]];
+    A = [[2.0, 3.0, -1.0],
+         [4.0, 1.0, 2.0],
+         [-2.0, 7.0, 2.0]];
 
     L, U = lu(A, use_c = False)
     print(L)
     print(U)
 
-    A = [[2.0, 3.0, -1.0],
-         [4.0, 1.0, 2.0],
-         [-2.0, 7.0, 2.0]];
+    # A = [[2.0, 3.0, -1.0],
+    #      [4.0, 1.0, 2.0],
+    #      [-2.0, 7.0, 2.0]];
 
 
-    L, U = lu(A, use_c=True)
-    print(L)
-    print(U)
+    # L, U = lu(A, use_c=True)
+    # print(L)
+    # print(U)
