@@ -49,7 +49,10 @@ def lu_c(A):
         [c_array_2d[i * n + j] for j in range(n)]
         for i in range(n)
     ]
-    print(modified_array_2d)
+
+    print(f'Modified array: {modified_array_2d}')
+
+
     # Extract L and U parts from A, fill with 0's and 1's
     return unpack(modified_array_2d)
 
