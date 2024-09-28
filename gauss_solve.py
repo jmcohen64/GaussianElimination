@@ -90,6 +90,11 @@ if __name__ == "__main__":
     print(L)
     print(U)
 
+    # Must re-initialize A as it was destroyed
+    A = [[2.0, 3.0, -1.0],
+         [4.0, 1.0, 2.0],
+         [-2.0, 7.0, 2.0]];
+
     L, U = lu(A, use_c=True)
     print(L)
     print(U)
