@@ -75,7 +75,6 @@ def lu(A, use_c=False):
 
 
 
-
 if __name__ == "__main__":
 
     A = [[2.0, 3.0, -1.0],
