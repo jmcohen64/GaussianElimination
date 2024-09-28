@@ -64,7 +64,15 @@ def lu_python(A):
                 A[i][k] -= A[i][j] * A[j][k]
             A[i][k] /= A[k][k]
 
-    return A
+    return unpack(A)
+
+
+def lu(A, use_c=False):
+    if use_c:
+        return lu_c(A)
+    else:
+        return lu_python(A)
+
 
 
 
