@@ -53,6 +53,21 @@ def lu_c(A):
     # Extract L and U parts from A, fill with 0's and 1's
     return unpack(modified_array_2d)
 
+def lu_python(A):
+    n = len(A)
+    for k in range(n):
+        for i in range(n):
+            for j in range(k):
+                A[k][i] -= A[k][j] * A[j][i]
+        for i in range(k+1, n):
+            for j in range(k):
+                A[i][k] -= A[i][j] * A[j][k]
+            A[i][k] /= A[k][k]
+
+    return A
+
+
+
 if __name__ == "__main__":
 
     A = [[2.0, 3.0, -1.0],
