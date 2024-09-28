@@ -15,6 +15,17 @@ import ctypes
 lib = ctypes.CDLL('./libgauss.so')
 
 
+def unpack(A):
+    """ Extract L and U parts from A, fill with 0's and 1's """
+    n = len(A)
+    L = [[A[i][j] for j in range(i)] + [1] + [0 for j in range(i+1, n)]
+         for i in range(n)]
+
+    U = [[0 for j in range(i)] + [A[i][j] for j in range(i, n)]
+         for i in range(n)]
+
+    return L, U
+
 def lu(A):
     """ Accepts a list of lists A of floats and
     it returns (L, U) - the LU-decomposition as a tuple.
@@ -39,18 +50,7 @@ def lu(A):
     ]
 
     # Extract L and U parts from A, fill with 0's and 1's
-    L = [
-        [modified_array_2d[i][j] for j in range(i)] + [1] + [0 for j in range(i+1,n)]
-        for i in range(n)
-    ]
-
-    U = [
-        [ 0 for j in range(i) ] + [ modified_array_2d[i][j] for j in range(i, n) ]
-        for i in range(n)
-    ]
-
-    return L, U
-
+    return unpack(modified_array_2d)
 
 if __name__ == "__main__":
 
