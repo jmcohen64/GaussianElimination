@@ -61,9 +61,10 @@ def lu_c(A):
 def lu_python(A):
     n = len(A)
     for k in range(n):
-        for i in range(n):
+        for i in range(k,n):
             for j in range(k):
-                A[k][i] = A[k][i] - A[k][j] * A[j][i]
+                A[k][i] -= A[k][j] * A[j][i]
+                print(A)
         for i in range(k+1, n):
             for j in range(k):
                 A[i][k] = A[i][k] - A[i][j] * A[j][k]
