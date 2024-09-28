@@ -77,18 +77,21 @@ def lu(A, use_c=False):
 
 if __name__ == "__main__":
 
-    A = [[2.0, 3.0, -1.0],
-         [4.0, 1.0, 2.0],
-         [-2.0, 7.0, 2.0]];
+    def get_A():
+        """ Make a test matrix """
+        A = [[2.0, 3.0, -1.0],
+             [4.0, 1.0, 2.0],
+             [-2.0, 7.0, 2.0]]
+        return A
+
+    A = get_A()
 
     L, U = lu(A, use_c = False)
     print(L)
     print(U)
 
     # Must re-initialize A as it was destroyed
-    A = [[2.0, 3.0, -1.0],
-         [4.0, 1.0, 2.0],
-         [-2.0, 7.0, 2.0]];
+    A = get_A()
 
     L, U = lu(A, use_c=True)
     print(L)
