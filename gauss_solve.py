@@ -86,7 +86,7 @@ if __name__ == "__main__":
          [4.0, 1.0, 2.0],
          [-2.0, 7.0, 2.0]];
 
-    L, U = lu(A)
+    L, U = lu(A, use_c = False)
     print(L)
     print(U)
 
