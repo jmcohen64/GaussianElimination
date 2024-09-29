@@ -12,7 +12,11 @@
 #define GAUSS_SOLVE_H
 
 
-/* An idiomatic way to swap two l-values X and Y of type TYPE in C */
+/* An idiomatic way to swap two l-values X and Y of type TYPE in C
+   Example:
+   int x = 1; y = 2; SWAP(x, y);
+   Now x==2 and y==1.
+*/
 #define SWAP(X, Y, TYPE) do {			\
     TYPE tmp = (X);				\
     (X) = (Y);					\
