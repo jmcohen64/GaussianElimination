@@ -14,7 +14,7 @@
 
 /* An idiomatic way to swap two l-values X and Y of type TYPE in C
    Example:
-   int x = 1; y = 2; SWAP(x, y, int);
+   int x = 1; int y = 2; SWAP(x, y, int);
    Now x==2 and y==1.
 */
 #define SWAP(X, Y, TYPE) do {			\
