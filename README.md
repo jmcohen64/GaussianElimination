@@ -22,7 +22,7 @@ Install the following VSCode extensions:
 * Makefile Tools (for Makefile support).
 * CodeLLDB (or C/C++ Extension Pack) for GDB-based debugging support.
 
-Also, modify the paths to GCC and GDB in the file [launch.json]([./.vscode/launch.json]).
+Also, modify the paths to GCC and GDB in the file [launch.json](.vscode/launch.json).
 
 
 Disclaimer
