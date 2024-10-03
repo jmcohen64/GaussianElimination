@@ -11,7 +11,7 @@ The code and Makefile will work with Emacs, given that typical packages for C/C+
 
 IDE - VSCode
 =============
-The folder .vscode contains two files, launch.json and tasks.json which allow debugging with VS code. Three extensions are needed. In addition, GCC, GDB and GNU Make must be installed. 
+The folder .vscode contains two files, launch.json and tasks.json which allow debugging with VScode. Three extensions are needed. In addition, GCC, GDB and GNU Make must be installed. 
 
 Install the following VSCode extensions:
 
