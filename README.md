@@ -23,5 +23,6 @@ Install the following VSCode extensions:
 
 Disclaimer
 ==========
-This code is very minimalistic and it is designed purely for illustration and educational purposes. The author takes
-absolutely no responsibility for damages resulting from its use.
+This code is very minimalistic and it is designed purely for
+illustration and educational purposes. The author takes absolutely no
+responsibility for damages resulting from its use.
