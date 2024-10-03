@@ -12,7 +12,7 @@ packages for C/C++ development are installed (GCC, GDB and GNU Make)
 
 IDE - VSCode
 =============
-The folder .vscode contains two files, launch.json and tasks.json
+The folder [.vscode](.vscode) contains two files, launch.json and tasks.json
 which allow debugging with VSCode. Three extensions are needed. In
 addition, GCC, GDB and GNU Make must be installed.
 
@@ -22,7 +22,7 @@ Install the following VSCode extensions:
 * Makefile Tools (for Makefile support).
 * CodeLLDB (or C/C++ Extension Pack) for GDB-based debugging support.
 
-Also, modify the paths to GCC and GDB in the file ![.vscode/launch.json].
+Also, modify the paths to GCC and GDB in the file [launch.json]([.vscode/launch.json]).
 
 
 Disclaimer
