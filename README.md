@@ -8,7 +8,7 @@ Basic algorithms are implemented in C
 IDE - Emacs
 =======================
 The code and Makefile will work with Emacs, given that typical
-packages for C/C++ development are installed (GCC, GDB and Gnu Make)
+packages for C/C++ development are installed (GCC, GDB and GNU Make)
 
 IDE - VSCode
 =============
