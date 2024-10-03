@@ -7,7 +7,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Wed Oct  2 18:03:14 2024
+# Make data base, printed on Wed Oct  2 19:07:12 2024
 
 # Variables
 
@@ -24,7 +24,7 @@ GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
 VIRTUAL_ENV = /home/marek/venv-ardupilot
 # environment
-ZEITGEIST_DATA_PATH = /home/marek/.local/share/zeitgeist
+GJS_DEBUG_OUTPUT = stderr
 # environment
 SNAP_LAUNCHER_ARCH_TRIPLET = x86_64-linux-gnu
 # environment
@@ -80,7 +80,7 @@ XAUTHORITY = /run/user/1001/.mutter-Xwaylandauth.Q6GRU2
 # environment
 VIRTUAL_ENV_PROMPT = (venv-ardupilot) 
 # environment
-MEMORY_PRESSURE_WATCH = /sys/fs/cgroup/user.slice/user-1001.slice/user@1001.service/app.slice/run-r561e3c2b4a3c43f5bf69bc341cdef95f.service/memory.pressure
+MEMORY_PRESSURE_WATCH = /sys/fs/cgroup/user.slice/user-1001.slice/user@1001.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure
 # makefile
 MAKEFLAGS = pqrR
 # makefile
@@ -110,7 +110,7 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 32005
+VSCODE_PID = 39893
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
@@ -140,10 +140,11 @@ GNOME_DESKTOP_SESSION_ID = this-is-deprecated
 # makefile
 SHELL = /bin/sh
 # default
- 
 MAKECMDGOALS := all
 # environment
 XMODIFIERS = @im=ibus
+# environment
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # environment
 SHLVL = 0
 # environment
@@ -165,7 +166,7 @@ SNAP_USER_COMMON = /home/marek/snap/code/common
 # environment
 SNAP = /snap/code/169
 # environment
-INVOCATION_ID = b3238b46e941455fa48b7913b4c30ace
+INVOCATION_ID = 339519f43c4a4ea2b22800106d828c88
 # environment
 SNAP_REVISION = 169
 # environment
@@ -199,11 +200,13 @@ XDG_DATA_DIRS_VSCODE_SNAP_ORIG = /usr/share/ubuntu:/usr/share/gnome:/usr/local/s
 # environment
 LOGNAME = marek
 # environment
+GIO_LAUNCHED_DESKTOP_FILE = /var/lib/snapd/desktop/applications/code_code.desktop
+# environment
 SNAP_ARCH = amd64
 # makefile
 .DEFAULT_GOAL := all
 # environment
-SYSTEMD_EXEC_PID = 31909
+SYSTEMD_EXEC_PID = 6215
 # environment
 DISPLAY = :0
 # environment
@@ -223,10 +226,13 @@ MANAGERPID = 3141
 # environment
 DEBUGINFOD_URLS = https://debuginfod.ubuntu.com 
 # environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 39851
+# environment
 _ = /snap/code/169/usr/share/code/code
 # environment
 XDG_RUNTIME_DIR = /run/user/1001
 # makefile (from 'Makefile', line 4)
+ 
 CFLAGS = -std=c99 -fsignaling-nans -g -ggdb3 -O5
 # environment
 SNAP_UID = 1001
@@ -237,7 +243,7 @@ GDK_PIXBUF_MODULE_FILE = /home/marek/snap/code/common/.cache/gdk-pixbuf-loaders.
 # environment
 GIO_MODULE_DIR = /home/marek/snap/code/common/.cache/gio-modules
 # environment
-JOURNAL_STREAM = 9:231370
+JOURNAL_STREAM = 9:52680
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -287,7 +293,7 @@ GDMSESSION = ubuntu
 # environment
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # variable set hash-table stats:
-# Load=137/1024=13%, Rehash=0, Collisions=4/175=2%
+# Load=140/1024=14%, Rehash=0, Collisions=4/178=2%
 
 # Pattern-specific Variable Values
 
@@ -318,13 +324,13 @@ check: check_gauss_solve check_ctype_wrapper
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2024-09-29 19:09:45.763596916
+#  Last modified 2024-10-02 18:35:19.00729302
 #  File has been updated.
 #  Successfully updated.
 
 gauss_solve.o: gauss_solve.h
 #  Implicit rule search has been done.
-#  Last modified 2024-09-30 10:35:53.603152489
+#  Last modified 2024-10-02 18:38:00.334999904
 #  File has been updated.
 #  Successfully updated.
 
@@ -365,9 +371,10 @@ check_gauss_solve: gauss_solve
 
 gauss_solve: gauss_solve.o main.o helpers.o
 #  Implicit rule search has not been done.
-#  Last modified 2024-09-30 10:35:53.627152663
+#  Last modified 2024-10-02 18:39:32.048494066
 #  File has been updated.
 #  Successfully updated.
+ 
 #  recipe to execute (from 'Makefile', line 15):
 	$(CC) $(CFLAGS) $(OBJS) -o $@ $(LDFLAGS)
 
@@ -380,7 +387,7 @@ all: gauss_solve libgauss.so
 
 libgauss.so: gauss_solve.c
 #  Implicit rule search has not been done.
-#  Last modified 2024-09-30 10:35:53.651152837
+#  Last modified 2024-10-02 18:38:00.393996405
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 29):
@@ -395,9 +402,8 @@ gauss_solve.h:
 
 # Not a target:
 main.o:
- 
 #  Implicit rule search has been done.
-#  Last modified 2024-09-26 07:25:07.009017565
+#  Last modified 2024-10-02 18:39:32.025495461
 #  File has been updated.
 #  Successfully updated.
 
@@ -416,7 +422,7 @@ gauss_solve.py:
 
 helpers.o: helpers.h
 #  Implicit rule search has been done.
-#  Last modified 2024-09-26 07:25:07.01401747
+#  Last modified 2024-10-02 18:38:00.350998955
 #  File has been updated.
 #  Successfully updated.
 
@@ -434,6 +440,6 @@ helpers.o: helpers.h
 # strcache performance: lookups = 63 / hit rate = 52%
 # hash-table stats:
 # Load=30/8192=0%, Rehash=0, Collisions=0/63=0%
-# Finished Make data base on Wed Oct  2 18:03:14 2024
+# Finished Make data base on Wed Oct  2 19:07:12 2024
 
  
