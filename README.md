@@ -7,11 +7,14 @@ Basic algorithms are implemented in C
 
 IDE - Emacs
 =======================
-The code and Makefile will work with Emacs, given that typical packages for C/C++ development are installed (GCC, GDB and Gnu Make)
+The code and Makefile will work with Emacs, given that typical
+packages for C/C++ development are installed (GCC, GDB and Gnu Make)
 
 IDE - VSCode
 =============
-The folder .vscode contains two files, launch.json and tasks.json which allow debugging with VSCode. Three extensions are needed. In addition, GCC, GDB and GNU Make must be installed. 
+The folder .vscode contains two files, launch.json and tasks.json
+which allow debugging with VSCode. Three extensions are needed. In
+addition, GCC, GDB and GNU Make must be installed.
 
 Install the following VSCode extensions:
 
