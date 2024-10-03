@@ -10,7 +10,6 @@
 /* Driver for gauss_solve.c */
 
 #define _GNU_SOURCE
-
 #include <math.h>
 #include <string.h>
 #include <assert.h>
