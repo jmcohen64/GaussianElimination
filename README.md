@@ -15,9 +15,9 @@ The folder .vscode contains two files, launch.json and tasks.json which allow de
 
 Install the following VSCode extensions:
 
-    * C/C++ by Microsoft (for code editing and IntelliSense).
-    * Makefile Tools (for Makefile support).
-    * CodeLLDB (or C/C++ Extension Pack) for GDB-based debugging support.
+* C/C++ by Microsoft (for code editing and IntelliSense).
+* Makefile Tools (for Makefile support).
+* CodeLLDB (or C/C++ Extension Pack) for GDB-based debugging support.
 
 
 
