@@ -1,7 +1,8 @@
 CFLAGS=-std=c99
 CFLAGS+=-fsignaling-nans
 CFLAGS+=-g -ggdb3
-CFLAGS+= -O5
+#CFLAGS+= -O5
+CFLAGS+= -O0
 LDFLAGS=-lm
 PYTHON=python			#Name of Python executable
 
