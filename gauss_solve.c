@@ -8,6 +8,9 @@
 *
 *----------------------------------------------------------------*/
 #include "gauss_solve.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include "helpers.h"
 
 void gauss_solve_in_place(const int n, double A[n][n], double b[n])
 {
@@ -63,6 +66,52 @@ void lu_in_place_reconstruct(int n, double A[n][n])
       for(int j=0; j<k; ++j) {
 	A[k][i] +=  A[k][j] * A[j][i];
       }
+    }
+  }
+}
+
+void plu(int n, double A[n][n], int P[n])
+{
+  printf("%s\n", "start");
+    print_matrix(n, A, 0);
+    for (int i = 0; i<n; i++){
+      printf("%d\n", P[i]);
+    }
+  for(int col=0; col < n-1; col++){
+    /* find max*/
+    double max = abs(A[P[col]][col]);
+    int rmax = col;
+    for (int row = col + 1; row < n-1; row++ ){
+      int val = abs(A[P[row]][col]);
+      if (max < val) {
+        max = val;
+        rmax = row;
+      }
+    }
+    /*swap*/
+    P[col] = rmax;
+    P[rmax] = col;
+
+
+    printf("%s\n","swap");
+    print_matrix(n, A, 0);
+    for (int i = 0; i<n; i++){
+      printf("%d\n", P[i]);
+    }
+
+    /*update*/
+    for (int row = col + 1; row < n-1; row++ ){
+      /*calculate multiplier*/
+      A[P[row]][col] = A[P[row]][col]/A[P[col]][col];
+      /*update matrix*/
+      for (int c = col +1; c < n-1; c++){
+        A[P[row]][c] += -A[P[row]][col]*A[P[col]][c];
+      }
+    }
+    printf("%s\n","update");
+    print_matrix(n, A, 0);
+    for (int i = 0; i<n; i++){
+      printf("%d\n", P[i]);
     }
   }
 }

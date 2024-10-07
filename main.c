@@ -67,6 +67,23 @@ void test_gauss_solve()
   print_matrix(N, A, FLAG_LOWER_PART);
 }
 
+/*testing plu*/
+void test_gauss_PLU(){
+  double A[N][N] = {
+    {2, 3, -1},
+    {4, 1, 2},
+    {-2, 7, 2}
+  };
+  int P[N] = {0, 1, 2};
+  
+  plu(N, A, P);
+
+  //print_matrix(N, A, 0);
+  //for (int i = 0; i<N; i++){
+  //  printf("%d\n", P[i]);
+  //}
+}
+
 jmp_buf env;  // Buffer to store the state for setjmp/longjmp
 
 void test_gauss_solve_with_zero_pivot()
@@ -215,11 +232,15 @@ int main()
   feenableexcept(FE_DIVBYZERO | FE_INVALID | FE_OVERFLOW);
   sighandler_t old_handler = signal(SIGFPE, fpe_handler);
 
+  test_gauss_PLU();
+  /*
   test_gauss_solve();
   test_lu_in_place();
   benchmark_test(5);
   benchmark_test_dynamic(5);
   benchmark_test_dynamic_alt(2000);
-  test_gauss_solve_with_zero_pivot();  
+  test_gauss_solve_with_zero_pivot();
+  */
+
   exit(EXIT_SUCCESS);
 }
