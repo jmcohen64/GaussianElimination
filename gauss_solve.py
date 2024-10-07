@@ -75,16 +75,12 @@ def lu(A, use_c=False):
 
 def plu(A, use_c = False):
     n = len(A)
-    P,L,U = [],[],[]
+    P, L, U = [], [], []
     for i in range(n):
-        P.append([])
+        P.append(i)
         L.append([])
         U.append([])
         for j in range(n):
-            if i ==j:
-                P[i].append(1)
-            else:
-                P[i].append(0)
             L[i].append(0)
             U[i].append(A[i][j])
 

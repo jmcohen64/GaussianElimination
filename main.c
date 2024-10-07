@@ -34,7 +34,7 @@ void test_gauss_solve()
   const double A0[N][N] = {
     {2, 3, -1},
     {4, 1, 2},
-    {-2, 7, 2}
+    {-1, 7, 2}
   };
 
   const double b0[N] = {5, 6, 3};
@@ -72,7 +72,7 @@ void test_gauss_PLU(){
   double A[N][N] = {
     {2, 3, -1},
     {4, 1, 2},
-    {-2, 7, 2}
+    {-1, 7, 2}
   };
   int P[N] = {0, 1, 2};
   
@@ -233,14 +233,14 @@ int main()
   sighandler_t old_handler = signal(SIGFPE, fpe_handler);
 
   test_gauss_PLU();
-  /*
+  
   test_gauss_solve();
   test_lu_in_place();
   benchmark_test(5);
   benchmark_test_dynamic(5);
   benchmark_test_dynamic_alt(2000);
   test_gauss_solve_with_zero_pivot();
-  */
+  
 
   exit(EXIT_SUCCESS);
 }
