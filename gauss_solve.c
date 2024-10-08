@@ -72,15 +72,16 @@ void lu_in_place_reconstruct(int n, double A[n][n])
 
 void plu(int n, double A[n][n], int P[n])
 {
+  
+  //printf("%s\n", "start");
+  //print_matrix(n, A, 0);
+    //for (int i = 0; i<n; i++){
+    //  printf("%d\n", P[i]);
+    //}
+  
   /*
-  printf("%s\n", "start");
-    print_matrix(n, A, 0);
-    for (int i = 0; i<n; i++){
-      printf("%d\n", P[i]);
-    }
-  */
   for(int col=0; col < n-1; col++){
-    /* find max*/
+    /* find max
     double max = abs(A[P[col]][col]);
     int rmax = P[col];
     for (int row = col + 1; row < n; row++ ){
@@ -90,40 +91,77 @@ void plu(int n, double A[n][n], int P[n])
         rmax = P[row];
       }
     }
-    /*swap*/
+    
+    /*swap
     if (rmax != P[col]){
       int temp = P[col];
       P[col] = rmax;
       P[rmax] = temp;
     }
-    /*
-    printf("%s\n","swap");
-    print_matrix(n, A, 0);
-    for (int i = 0; i<n; i++){
-      printf("%d\n", P[i]);
-    }
     */
-    /*update*/
+    for(int col=0; col < n-1; col++){
+    /* find max*/
+    double max = abs(A[col][col]);
+    int rmax = col;
     for (int row = col + 1; row < n; row++ ){
-      /*calculate multiplier*/
+      int val = abs(A[row][col]);
+      if (max < val) {
+        max = val;
+        rmax = row;
+      }
+    }
+    //printf("%d\n", rmax);
+    /*swap*/
+    if (rmax != col){
+      for (int c = 0; c< n; c++){
+        //printf("%f\n", A[col][c]);
+        //printf("%f\n", A[rmax][c]);
+        
+        double temp = A[col][c];
+        A[col][c] = A[rmax][c];
+        A[rmax][c] = temp;
+
+        int index = P[col];
+        P[col] = P[rmax];
+        P[rmax] = index;
+      }
+      
+    }
+    
+    //printf("%s\n","swap");
+    //print_matrix(n, A, 0);
+    //for (int i = 0; i<n; i++){
+    //  printf("%d\n", P[i]);
+    //}
+    
+    /*update*/
+
+    /*
+    for (int row = col + 1; row < n; row++ ){
+      /*calculate multiplier
       A[P[row]][col] = A[P[row]][col]/A[P[col]][col];
-      /*update matrix*/
+      /*update matrix
       for (int c = col +1; c < n; c++){
         A[P[row]][c] += -A[P[row]][col]*A[P[col]][c];
       }
     }
-    /*
-    printf("%s\n","update");
-    print_matrix(n, A, 0);
-    for (int i = 0; i<n; i++){
-      printf("%d\n", P[i]);
-    }
     */
-  }
 
-  /*reorder*/
-  for (int row = 0; row < n; row++){
-
-
+    for (int row = col + 1; row < n; row++ ){
+      /*calculate multiplier*/
+      A[row][col] = A[row][col]/A[col][col];
+      /*update matrix*/
+      for (int c = col +1; c < n; c++){
+        A[row][c] += -A[row][col]*A[col][c];
+      }
+    }
+    
+    
+    //printf("%s\n","update");
+    //print_matrix(n, A, 0);
+    //for (int i = 0; i<n; i++){
+    //  printf("%d\n", P[i]);
+    //}
+    
   }
 }

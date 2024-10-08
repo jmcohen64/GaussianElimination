@@ -73,7 +73,7 @@ def lu(A, use_c=False):
     else:
         return lu_python(A)
 
-def plu(A, use_c = False):
+def plu_python(A):
     n = len(A)
     P, L, U = [], [], []
     for i in range(n):
@@ -126,13 +126,57 @@ def plu(A, use_c = False):
                 
     return P,L,U
 
+def plu_c(A):
+    """ Accepts a list of lists A of floats and
+    it returns (L, U) - the LU-decomposition as a tuple.
+    """
+    # Load the shared library
+    lib = ctypes.CDLL(gauss_library_path)
+
+    # Create a 2D array in Python and flatten it
+    n = len(A)
+    flat_array_2d = [item for row in A for item in row]
+    P = []
+    for i in range(n):
+        P.append(i)
+
+    # Convert to a ctypes array
+    c_array_2d = (ctypes.c_double * len(flat_array_2d))(*flat_array_2d)
+    c_P = (ctypes.c_int * len(P))(*P)
+
+    # Define the function signature
+    lib.plu.argtypes = (ctypes.c_int, ctypes.POINTER(ctypes.c_double), ctypes.POINTER(ctypes.c_int))
+
+    # Modify the array in C (e.g., add 10 to each element)
+    lib.plu(n, c_array_2d, c_P)
+
+    # Convert back to a 2D Python list of lists
+    modified_array_2d = [
+        [c_array_2d[i * n + j] for j in range(n)]
+        for i in range(n)
+    ]
+
+    p_vector = []
+    for i in range(n):
+        p_vector.append(c_P[i])
+    
+    # Extract L and U parts from A, fill with 0's and 1's
+    L, U = unpack(modified_array_2d)
+    return p_vector, L, U
+
+def plu(A, use_c=False):
+    if use_c:
+        return plu_c(A)
+    else:
+        return plu_python(A)
+
 if __name__ == "__main__":
 
     def get_A():
         """ Make a test matrix """
-        A = [[2.0, 3.0, -1.0],
-             [4.0, 1.0, 2.0],
-             [-1.0, 7.0, 2.0]]
+        A = [[5.0, 3.0, -1.0],
+             [4.0, 20.0, 2.0],
+             [-2.0, 7.0, 16]]
         return A
 
     A = get_A()
@@ -150,4 +194,9 @@ if __name__ == "__main__":
     """  
     P, L, U = plu(A, use_c = False)
     print(P,L,U)
+
+    P, L, U = plu(A, use_c = True)
+    print(P, L, U)
+
+
     

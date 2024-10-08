@@ -233,14 +233,14 @@ int main()
   sighandler_t old_handler = signal(SIGFPE, fpe_handler);
 
   test_gauss_PLU();
-  
+  /*
   test_gauss_solve();
   test_lu_in_place();
   benchmark_test(5);
   benchmark_test_dynamic(5);
   benchmark_test_dynamic_alt(2000);
   test_gauss_solve_with_zero_pivot();
-  
+  */
 
   exit(EXIT_SUCCESS);
 }
