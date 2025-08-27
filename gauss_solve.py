@@ -192,8 +192,8 @@ if __name__ == "__main__":
     print(L)
     print(U)
     """  
-    P, L, U = plu(A, use_c = False)
-    print(P,L,U)
+    #P, L, U = plu(A, use_c = False)
+    #print(P,L,U)
 
     P, L, U = plu(A, use_c = True)
     print(P, L, U)
